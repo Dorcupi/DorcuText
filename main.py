@@ -68,7 +68,10 @@ def changeviewsize():
     global text
     newsize = simpledialog.askinteger("DorcuText", "Enter new font size")
     if newsize:
-        text.config(font=("Courier", newsize))
+        if newsize < 4298000000:
+            text.config(font=("Courier", newsize))
+        else:
+            text.config(font=("Courier", 4298000000))
 
 def popup_window(root = root):
     window = Toplevel()
